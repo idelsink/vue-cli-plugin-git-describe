@@ -13,7 +13,11 @@
     "vue-cli-plugin"
   ],
   "main": "index.js",
-  "scripts": {},
+  "scripts": {
+    "test": "npm-run-all test:lint test:unit",
+    "test:lint": "eslint --ext .js .",
+    "test:unit": ""
+  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/idelsink/vue-cli-plugin-git-describe.git"
@@ -25,7 +29,15 @@
   },
   "homepage": "https://github.com/idelsink/vue-cli-plugin-git-describe#readme",
   "devDependencies": {
+    "eslint": "^5.16.0",
+    "eslint-config-semistandard": "^13.0.0",
+    "eslint-config-standard": "^12.0.0",
+    "eslint-plugin-import": "^2.17.2",
+    "eslint-plugin-node": "^9.0.1",
+    "eslint-plugin-promise": "^4.1.1",
+    "eslint-plugin-standard": "^4.0.0",
     "git-describe": "^4.0.4",
+    "npm-run-all": "^4.1.5",
     "webpack": "^4.30.0"
   },
   "dependencies": {}

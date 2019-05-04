@@ -1,5 +1,5 @@
 const Webpack = require('webpack');
-const {gitDescribeSync} = require('git-describe');
+const { gitDescribeSync } = require('git-describe');
 
 /**
  * Git describe plugin
@@ -29,7 +29,7 @@ module.exports = (api, options) => {
         console.error('Failed to retrieve git info:', err);
       }
       return null;
-    }
+    };
     // Webpack's DefinePlugin is used to inject the 'global variable' on compile time
     // The variable used can be set via the options
     const definePluginOps = {};
@@ -37,5 +37,5 @@ module.exports = (api, options) => {
     webpackConfig
       .plugin('gitDescribe')
       .use(Webpack.DefinePlugin, [definePluginOps]);
-  })
-}
+  });
+};
