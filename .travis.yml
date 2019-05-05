@@ -5,6 +5,6 @@ notifications:
 
 language: node_js
 node_js:
-  - "node"
+  # - "node" Disable latest version v12. See: 'vue-cli crashes with node.js v12' https://github.com/vuejs/vue-cli/issues/3883
   - "10"
   - "8"
