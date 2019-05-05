@@ -6,10 +6,31 @@
  * @return {}
  */
 module.exports = (api, options) => {
+  console.log('generator options', options);
+  // Set the variableName to use
+  api.extendPackage({
+    vue: {
+      pluginOptions: {
+        gitDescribe: {
+          variableName: options.variableName || 'GIT_DESCRIBE'
+        }
+      }
+    }
+  });
+
   // Add git-describe as a dependency
   api.extendPackage({
     devDependencies: {
       'git-describe': '^4.0.4'
     }
   });
+
+  if (options.installSemver || false) {
+    // Install semver package
+    api.extendPackage({
+      devDependencies: {
+        'semver': '^6.0.0'
+      }
+    });
+  }
 };

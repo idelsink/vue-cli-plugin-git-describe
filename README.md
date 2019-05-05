@@ -18,14 +18,49 @@ Available from npm:
 $ vue add git-describe
 ```
 
+This will ask a few questions and will install the plugin.
+
 Tests are not included in the npm package —
 clone the git repository to run tests.
 
 ## Usage
 
-vue-cli-plugin-git-describe uses the node [git-describe](https://www.npmjs.com/package/git-describe) module.
+git-describe uses the node [git-describe](https://www.npmjs.com/package/git-describe) module.
 During compilation, the variable `variableName`, default `GIT_DESCRIBE`, is replaced with the
 [git-describe](https://www.npmjs.com/package/git-describe#example-output) object.
+
+### Example
+
+1. Create an example app (Skip this step if you want to use your own application)
+   ```shell
+   $ vue create test-app && cd test-app
+   ```
+2. Install the git-describe plugin
+   ```shell
+   $ vue add git-describe
+   ```
+3. Add the configured constant, default `GIT_DESCRIBE`, to your code.
+  ```JavaScript
+  console.log('App version', GIT_DESCRIBE.raw);
+  ```
+  Outputs:
+  ```text
+  App version c6bd20d-dirty
+  ```
+
+## Options
+
+`git-describe` has the following options available in the `vue.config.js` file:
+
+```JavaScript
+module.exports = {
+  pluginOptions: {
+    gitDescribe: {
+      variableName: 'GIT_DESCRIBE'  // The compile-time global constant varialbe name to use in the code.
+    }
+  }
+}
+```
 
 ## Example output
 
@@ -44,7 +79,7 @@ During compilation, the variable `variableName`, default `GIT_DESCRIBE`, is repl
 
 ## More information
 
-See [git-describe](https://www.npmjs.com/package/git-describe) for more information about the usage of the git-describe package.
+See [git-describe](https://www.npmjs.com/package/git-describe) for more information about the usage of the git-describe package and the reason to include the optional [semver](https://github.com/npm/node-semver) package.
 
 ## Tests
 
