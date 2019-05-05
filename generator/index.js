@@ -6,7 +6,6 @@
  * @return {}
  */
 module.exports = (api, options) => {
-  console.log('generator options', options);
   // Set the variableName to use
   api.extendPackage({
     vue: {
