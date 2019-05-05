@@ -35,10 +35,12 @@ During compilation, the variable `variableName`, default `GIT_DESCRIBE`, is repl
    ```shell
    $ vue create test-app && cd test-app
    ```
+   ![Example](assets/example_create_app.png)
 2. Install the git-describe plugin
    ```shell
    $ vue add git-describe
    ```
+   ![Example](assets/example_install.png)
 3. Add the configured constant, default `GIT_DESCRIBE`, to your code.
   ```JavaScript
   console.log('App version', GIT_DESCRIBE.raw);
